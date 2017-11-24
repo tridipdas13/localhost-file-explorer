@@ -70,7 +70,10 @@
             </nav>
 
 
-              <input type="text" class="hidden-sm hidden-xs" id="header-search-filed" placeholder="XAMP">
+              <input type="text" class="hidden-sm hidden-xs" id="header-search-filed" placeholder="<?php $crumbs = explode("/",$_SERVER["REQUEST_URI"]);
+foreach($crumbs as $crumb){
+    echo ucfirst(str_replace(array(".php","_"),array(""," "),$crumb) . ' ');
+} ?>">
             </div>
             <div class="col-md-7">
               <ul class="pull-right  ">
@@ -80,7 +83,6 @@
             </div>
           </header>
           </div>
-
 
 
 <?php
@@ -228,11 +230,13 @@
             </div>
         </div>
 
-");
+		");
   }
-}
+
+	}
 	?>
-    </div>
+
+  </div>
   </div>
 
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
