@@ -29,7 +29,7 @@
         <h1 class="hidden-xs hidden-sm"><img src='../index/icon/geek.png' width='60%'></h1>
         <ul>
           <li class="link active">
-          <a href="index.html">
+          <a href="">
           <span class="hidden-xs hidden-sm"><?php echo gethostname();?>-PC</span>
 
             </a>
