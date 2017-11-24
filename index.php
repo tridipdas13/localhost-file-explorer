@@ -217,7 +217,7 @@ foreach($crumbs as $crumb){
 
 
       <div "); if( $index % 6 == 0 ) echo ' class="row"'; echo(">
-       <div class='col-md-2 dashboard-left-cell'>
+       <div class='col-md-2 col-xs-4 dashboard-left-cell'>
                <div class='admin-content-con' align='center'>
                <a href='./$namehref'$favicon class='name'>$extn</a>
                <header>
