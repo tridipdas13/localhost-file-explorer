@@ -1,4 +1,4 @@
-## localhost File Maneger.
+## localhost File Manager.
 
 Access localhost (Wamp or Xampp) home directory with a new look . 
 
