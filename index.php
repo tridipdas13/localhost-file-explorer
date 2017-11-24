@@ -184,12 +184,19 @@
 				case "php": $extn="<img src='../index/icon/php.png' width='45%'>"; break;
 				case "js": $extn="<img src='../index/icon/Javascript.png' width='45%'>"; break;
 				case "css": $extn="<img src='../index/icon/css.png' width='45%'>"; break;
+        case "json": $extn="<img src='../index/icon/json-file.png' width='45%'>"; break;
 
 				case "pdf": $extn="<img src='../index/icon/pdf.png' width='45%'>"; break;
 				case "xls": $extn="<img src='../index/icon/xls.png' width='45%'>"; break;
 				case "xlsx": $extn="<img src='../index/icon/xls.png' width='45%'>"; break;
 				case "doc": $extn="<img src='../index/icon/doc.png' width='45%'>"; break;
+        case "csv": $extn="<img src='../index/icon/csv.png' width='45%'>"; break;
+        case "ppt": $extn="<img src='../index/icon/ppt.png' width='45%'>"; break;
+        case "mp3": $extn="<img src='../index/icon/mp3.png' width='45%'>"; break;
+        case "mp4": $extn="<img src='../index/icon/mp4.png' width='45%'>"; break;
+        case "psd": $extn="<img src='../index/icon/psd.png' width='45%'>"; break;
 				case "docx": $extn="<img src='../index/icon/doc.png' width='45%'>"; break;
+        case "xml": $extn="<img src='../index/icon/xml.png' width='45%'>"; break;
 
 				case "zip": $extn="<img src='../index/icon/zip.png' width='45%'>"; break;
 				case "htaccess": $extn="<img src='../index/icon/txt.png' width='45%'>"; break;
@@ -221,21 +228,10 @@
             </div>
         </div>
 
-		");
+");
   }
-
-	}
+}
 	?>
-
-
-
-
-
-
-
-
-
-
     </div>
   </div>
 
