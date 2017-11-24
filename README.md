@@ -11,4 +11,4 @@ Access localhost (Wamp or Xammp) home directory with a new look .
 ![New](https://github.com/Tridip13/localhost-file-maneger/blob/master/index/icon/Screenshot%20(1).png?raw=true "Title")
 
 ## New Look 
-![New](https://github.com/Tridip13/localhost-file-maneger/blob/master/index/icon/Screenshot%20(147).png?raw=true "Title")
+![New](https://github.com/Tridip13/localhost-file-maneger/blob/master/index/icon/Screenshot%20(148).png?raw=true "Title")
