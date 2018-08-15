@@ -175,7 +175,7 @@ foreach($crumbs as $crumb){
 				case "jpeg": $extn="<img src='../index/icon/jpg.png' width='45%'>"; break;
 				case "svg": $extn="<img src='../index/icon/svg.png' width='45%'>"; break;
 				case "gif": $extn="<img src='../index/icon/html.png' width='45%'>"; break;
-				case "ico": $extn="<img src='../index/icon/ioc.png' width='45%'>"; break;
+				case "ico": $extn="<img src='../index/icon/ico.png' width='45%'>"; break;
 
 				case "txt": $extn="<img src='../index/icon/txt.png' width='45%'>"; break;
 				case "log": $extn="<img src='../index/icon/log.png' width='45%'>"; break;
