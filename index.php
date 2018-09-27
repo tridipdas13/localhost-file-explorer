@@ -173,9 +173,9 @@ foreach($crumbs as $crumb){
 				case "png": $extn="<img src='../index/icon/png.png' width='45%'>"; break;
 				case "jpg": $extn="<img src='../index/icon/jpg.png' width='45%'>"; break;
 				case "jpeg": $extn="<img src='../index/icon/jpg.png' width='45%'>"; break;
-				case "svg": $extn="<img src='../index/icon/svg.png' width='45%'>"; break;
+				case "svg": $extn="<img src='../index/icon/html.png' width='45%'>"; break;
 				case "gif": $extn="<img src='../index/icon/html.png' width='45%'>"; break;
-				case "ico": $extn="<img src='../index/icon/ico.png' width='45%'>"; break;
+				case "ico": $extn="<img src='../index/icon/ioc.png' width='45%'>"; break;
 
 				case "txt": $extn="<img src='../index/icon/txt.png' width='45%'>"; break;
 				case "log": $extn="<img src='../index/icon/log.png' width='45%'>"; break;
@@ -213,22 +213,20 @@ foreach($crumbs as $crumb){
 		}
 
 	// Output
-	 echo("
-
-
-      <div "); if( $index % 6 == 0 ) echo ' class="row"'; echo(">
-       <div class='col-md-2 col-xs-4 dashboard-left-cell'>
+		$subName = substr($name,0,10);
+	  echo("
+       <div class='col-md-2 dashboard-left-cell' align='center'>
                <div class='admin-content-con' align='center'>
                <a href='./$namehref'$favicon class='name'>$extn</a>
                <header>
                    <h5>
-                      <a href='./$namehref'$favicon class='name'>$name</a>
+                      <a href='./$namehref'$favicon class='name'> $subName..</a>
 
                    </h5>
                  </header>
              </div>
             </div>
-        </div>
+
 
 		");
   }
@@ -236,7 +234,16 @@ foreach($crumbs as $crumb){
 	}
 	?>
 
-  </div>
+
+
+
+
+
+
+
+
+
+    </div>
   </div>
 
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
