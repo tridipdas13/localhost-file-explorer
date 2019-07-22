@@ -1,24 +1,23 @@
 <?  date_default_timezone_set('Asia/Kolkata'); ?>
 <!DOCTYPE html>
 <html lang="en">
-
+<?php define('SITE_ROOT_URL','//'.$_SERVER['HTTP_HOST'].'');?>
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-  <title><?php echo $ip = ($_SERVER['REMOTE_ADDR']); ?></title>
+  <title><?php echo gethostname(); ?></title>
 
   <!-- Bootstrap -->
-  <link href="../index/css/bootstrap.min.css" rel="stylesheet">
-  <link href="../index/css/cust.css" rel="stylesheet">
-
-  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-  <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+  <link href=" <?php echo SITE_ROOT_URL ?>/index/css/bootstrap.min.css" rel="stylesheet">
+  <link href=" <?php echo SITE_ROOT_URL ?>/index/css/cust.css" rel="stylesheet">
+  <link href=" <?php echo SITE_ROOT_URL ?>/index/intro/introjs.css" rel="stylesheet">
+  <script src="index/js/bootstrap.min.js"></script>
+  <script src="index/intro/intro.js"></script>
+  <script src="index/js/jquery-1.11.3.min.js" type="text/javascript"></script>
+  <script src="index/js/cust.js"></script>
+  
 </head>
 
 <body>
@@ -28,28 +27,63 @@
       <div class="col-md-2 col-sm-1 hidden-xs  display-table-cell valign-top" id="side-menu">
         <h1 class="hidden-xs hidden-sm"><img src='../index/icon/geek.png' width='60%'></h1>
         <ul>
+		<div class='span6' data-step="3" data-intro='Your System Name' data-position='right' data-scrollTo='tooltip'>
           <li class="link active">
           <a href="">
           <span class="hidden-xs hidden-sm"><?php echo gethostname();?>-PC</span>
-
             </a>
-          </li>
+		  </li>
+		</div>
 
+		<div class='span6' data-step="4" data-intro='Php Version' data-position='right' data-scrollTo='tooltip'>
           <li class="link setting-btn">
           <a href="">
           <span class="glyphicon glyphicon-cog" area-hidden="true"></span>
           <span class="hidden-xs hidden-sm">PHP version:   <?php echo phpversion();?></span>
-
             </a>
-          </li>
+		  </li>
+</div>
+<div class='span6' data-step="5" data-intro='Systems current Date' data-position='right' data-scrollTo='tooltip'>
           <li class="link setting-btn">
           <a href="">
           <span class="glyphicon glyphicon-cog" area-hidden="true"></span>
           <span class="hidden-xs hidden-sm"><?php echo date("d-m-Y");?></span>
-
             </a>
-          </li>
-        </li>
+		  </li>
+</div>
+<div class='span6' data-step="6" data-intro='Access phpMyAdmin' data-position='right' data-scrollTo='tooltip'>
+          <li class="link setting-btn">
+          <a href="<?php echo SITE_ROOT_URL ?>/phpmyadmin">
+          <span class="glyphicon glyphicon-cog" area-hidden="true"></span>
+          <span class="hidden-xs hidden-sm">phpMyAdmin</span>
+            </a>
+		  </li>
+</div>
+	<li class="link setting-btn">
+	<a href="javascript:void(0);" onclick="javascript:introJs().start();">
+	<span class="glyphicon glyphicon-cog" area-hidden="true"></span>
+		  <span class="hidden-xs hidden-sm">Help Me</span>
+		  </a>
+</li>
+
+<li class="link setting-btn">
+
+<div style="padding: 40px;top: 71vh;position: absolute;">
+<div class='span6' data-step="7" data-intro='Battry information' data-position='right' data-scrollTo='tooltip'>
+<div id="percent" class="c100 p80 " >
+
+  <span id="percent_txt"></span>
+  <span id="charge_Status" style="padding:10px;font-size:11px;"></span>
+  
+  <div class="slice">
+    <div class="bar"></div>
+	<div class="fill"></div>
+  </div>
+
+</div>
+</div>
+</div>
+</li>
 
         </ul>
 
@@ -70,22 +104,40 @@
             </nav>
 
 
-              <input type="text" class="hidden-sm hidden-xs" id="header-search-filed" placeholder="<?php $crumbs = explode("/",$_SERVER["REQUEST_URI"]);
+              <!-- <input type="text" class="hidden-sm hidden-xs" id="header-search-filed" placeholder="<?php $crumbs = explode("/",$_SERVER["REQUEST_URI"]);
 foreach($crumbs as $crumb){
     echo ucfirst(str_replace(array(".php","_"),array(""," "),$crumb) . ' ');
-} ?>">
-            </div>
+} ?>"> -->
+
+<div style="padding-top: 17px;">
+<div class='span6' data-step="1" data-intro='Search for file and folder' data-position='right' data-scrollTo='tooltip'>
+	<input style="padding:5px; border: none; width: 300px; outline: none; " type="text"  class="" id="search-filed" placeholder="search here" onkeyup="handleKeyup(this)">
+</div>
+</div>			
+</div>
             <div class="col-md-7">
               <ul class="pull-right  ">
-                <li id="welcone" class="hidden-xs">Your IP Address is <?php echo $ip = ($_SERVER['REMOTE_ADDR']); ?></li>
-              </ul>
+                <li id="welcone" class="hidden-xs">
+			<div class='span6' data-step="2" data-intro='Your Local Ip address' data-position='right' data-scrollTo='tooltip'>
+					Your IP Address is <?php echo $ip = ($_SERVER['REMOTE_ADDR']); ?>
+					</div>
+				</li>
+  
+			</ul>
+			
+			  
 
             </div>
-          </header>
-          </div>
+		  </header>
+		  
+		  </div>
+		  
+		  <!-- -----------box---------- -->
+		  <div class='span6' data-step="8" data-intro='All your files and folders' data-position='right' data-scrollTo='tooltip'>
+		  <div class="row" id="ResultCard">
+		  
 
-
-<?php
+	<?php
 
 	// Adds pretty filesizes
 	function pretty_filesize($file) {
@@ -214,43 +266,92 @@ foreach($crumbs as $crumb){
 
 	// Output
 		$subName = substr($name,0,10);
+		$json[]=array(
+			'files_Name'=> $subName,
+			'files_path'=>$namehref,
+			'favicon' => $favicon,
+			'extn' => $extn
+		);
 	  echo("
+	  
        <div class='col-md-2 dashboard-left-cell' align='center'>
                <div class='admin-content-con' align='center'>
                <a href='./$namehref'$favicon class='name'>$extn</a>
                <header>
                    <h5>
                       <a href='./$namehref'$favicon class='name'> $subName..</a>
-
                    </h5>
                  </header>
              </div>
-            </div>
-
+			</div>
+		
 
 		");
   }
 
 	}
+	$new = json_encode($json);
 	?>
+	</div>
 
-
-
-
-
-
-
-
-
-
-    </div>
+</div>
   </div>
+  </div>
+  
+<script>
+	document.getElementById("search-filed").focus();
+	  let filename = <?php echo $new; ?>;
+	
+	  function handleKeyup(elem) {
+		var m = elem.value;
+		var Count = 0;
+		  $("#ResultCard").html("");
+		  if (m !== "") {
+			for (var i = 0; i < filename.length; i++) {
+                var files_Name = filename[i].files_Name;
+                var files_path = filename[i].files_path;
+				var favicon = filename[i].favicon;
+				var extn = filename[i].extn;
+                var files_NameUp = files_Name.toUpperCase();
 
-  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-  <!-- Include all compiled plugins (below), or include individual files as needed -->
-  <script src="index/js/bootstrap.min.js"></script>
-  <script src="index/js/cust.js"></script>
+                m = m.toUpperCase();
+
+                if (files_NameUp.indexOf(m) != -1) {
+					++Count;
+                        // var htmldata =" <label id="+i+" class='con'>" + ajaxResult[i].Report_Name+ "<input type='checkbox' value="+ ajaxResult[i].Analyte_Code+ " "+ajaxResult[i].status+"  ><span class='checkmark'></span></label>"
+                       var htmlfromsearch = "<div class='col-md-2 dashboard-left-cell' align='center'><div class='admin-content-con' align='center'><a href='./"+ filename[i].files_path +"'"+ filename[i].files_favicon + "class='name'>"+ filename[i].extn +"</a><header><h5><a href='./"+ filename[i].files_path +"'"+ filename[i].files_favicon +" class='name'> "+ filename[i].files_Name +"..</a></h5></header></div></div>";
+					   $("#ResultCard").append(htmlfromsearch).show();
+						
+                }
+            }
+			if(Count == 0){
+                var htmldata =" <div style='position: fixed;top: 50%;left: 50%;'><img src='images/nothing-found.png' width=10%></br><span style='font-size:22px;'>Nothing Found</span></div>"
+               
+				$("#ResultCard").append(htmldata).show();
+            }
+		  
+		  }
+		  else{
+			for (var i = 0; i < filename.length; i++) {
+                var files_Name = filename[i].files_Name;
+                var files_path = filename[i].files_path;
+				var favicon = filename[i].favicon;
+				var extn = filename[i].extn;
+                var files_NameUp = files_Name.toUpperCase();
+
+                        // var htmldata =" <label id="+i+" class='con'>" + ajaxResult[i].Report_Name+ "<input type='checkbox' value="+ ajaxResult[i].Analyte_Code+ " "+ajaxResult[i].status+"  ><span class='checkmark'></span></label>"
+                       var htmlfromsearch = "<div class='col-md-2 dashboard-left-cell' align='center'><div class='admin-content-con' align='center'><a href='./"+ filename[i].files_path +"'"+ filename[i].files_favicon + "class='name'>"+ filename[i].extn +"</a><header><h5><a href='./"+ filename[i].files_path +"'"+ filename[i].files_favicon +" class='name'> "+ filename[i].files_Name +"..</a></h5></header></div></div>";
+					   $("#ResultCard").append(htmlfromsearch).show();
+						
+                
+            
+		  }
+		  
+	  }
+	  }
+</script>
+<script src="index/intro/intro.js"></script>
+
 </body>
 
 </html>
